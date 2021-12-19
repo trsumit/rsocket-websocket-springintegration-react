@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.5.3'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'io.spring.dependency-management'
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+    //implementation group: 'org.springframework', name: 'spring-messaging', version: '5.3.2'
+    implementation group: 'io.projectreactor', name: 'reactor-core', version: '3.4.13'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-rsocket'
+    implementation 'io.rsocket:rsocket-core:1.1.1'
+    implementation 'io.rsocket:rsocket-transport-netty:1.1.1'
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-webflux
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-webflux', version: '2.5.2'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-integration'
+
+
+
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+}
+
+test {
+    useJUnitPlatform()
+}
